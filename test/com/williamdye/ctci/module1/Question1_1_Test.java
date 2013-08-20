@@ -10,7 +10,7 @@ public class Question1_1_Test
     @Test
     public void invokeMainWithUniqueStrings_Succeeds()
     {
-        final String[] args = {"aquickbrownfxjmpsvethlzydg", "mitch", "Mr. mitch", "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPp"};
+        final String[] args = {"aquickbrownfxjmpsvethlzydg", "Mitch", "Mr. mitch", "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPp"};
         try {
             Question1_1.main(args);
         } catch (AssertionError error) {
