@@ -25,6 +25,7 @@ public class Question1_1 implements Question
         this.args = args;
     }
 
+    @Override
     public void solve()
     {
         for (String string : args) {
