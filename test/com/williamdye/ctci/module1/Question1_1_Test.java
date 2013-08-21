@@ -7,22 +7,40 @@ import static org.junit.Assert.fail;
 public class Question1_1_Test
 {
 
+    private String[] args;
+
     @Test
-    public void invokeMainWithUniqueStrings_Succeeds()
+    public void solveWithUniqueStrings_Succeeds()
     {
-        final String[] args = {"aquickbrownfxjmpsvethlzydg", "Mitch", "Mr. mitch", "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPp"};
+        args = new String[] {"aquickbrownfxjmpsvethlzydg", "Mitch", "Mr. mitch", "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPp"};
+        optimizeForSpace_Succeeds();
+        optimizeForTime_Succeeds();
+    }
+
+    private void optimizeForSpace_Succeeds()
+    {
+        setSpaceOptimizationAndSolve(true);
+    }
+
+    private void optimizeForTime_Succeeds()
+    {
+        setSpaceOptimizationAndSolve(false);
+    }
+
+    private void setSpaceOptimizationAndSolve(boolean spaceOptimization)
+    {
         try {
-            Question1_1.main(args);
+            new Question1_1(spaceOptimization, args).solve();
         } catch (AssertionError error) {
-            fail();
+            fail(String.format("%s optimization", (spaceOptimization ? "space" : "time")));
         }
     }
 
     @Test(expected = AssertionError.class)
-    public void invokeMainWithNonUniqueStrings_ThrowsError()
+    public void solveWithNonUniqueStrings_ThrowsError()
     {
-        final String[] args = {"William", "Little Bobby Tables", "zzzzzzzzz", "1011001110010100"};
-        Question1_1.main(args);
+        args = new String[] {"William", "Little Bobby Tables", "zzzzzzzzz", "1011001110010100"};
+        new Question1_1(args).solve();
     }
 
 }
