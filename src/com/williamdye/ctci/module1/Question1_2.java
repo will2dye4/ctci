@@ -34,11 +34,6 @@ public class Question1_2 extends AbstractQuestion
         println(new String(str));
     }
 
-    private static void println(String message)
-    {
-        System.out.println(message);
-    }
-
     public static void main(String[] args)
     {
         new Question1_2(args).solve();
