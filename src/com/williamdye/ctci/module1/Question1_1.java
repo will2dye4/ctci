@@ -1,6 +1,6 @@
 package com.williamdye.ctci.module1;
 
-import com.williamdye.ctci.Question;
+import com.williamdye.ctci.AbstractQuestion;
 
 import java.util.*;
 
@@ -8,11 +8,10 @@ import java.util.*;
  * TASK: Implement an algorithm to determine if a string has all unique characters.
  * What if you cannot use additional data structures?
  */
-public class Question1_1 implements Question
+public class Question1_1 extends AbstractQuestion
 {
 
     private boolean optimizeForSpace;
-    private String[] args;
 
     public Question1_1(String[] args)
     {
@@ -21,8 +20,8 @@ public class Question1_1 implements Question
 
     public Question1_1(boolean spaceOptimization, String[] args)
     {
+        super(args);
         this.optimizeForSpace = spaceOptimization;
-        this.args = args;
     }
 
     @Override
