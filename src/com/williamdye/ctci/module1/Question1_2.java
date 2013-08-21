@@ -1,16 +1,24 @@
 package com.williamdye.ctci.module1;
 
-public class Question1_2
+import com.williamdye.ctci.Question;
+
+/**
+ * TASK: Implement a function void reverse(char* str) in C or C++ which reverses a null-terminated string.
+ * Clearly, this is a Java implementation, but I have tried to make it as close to a C implementation as possible.
+ * The C implementation (as yet untested) is given as a comment below.
+ */
+public class Question1_2 implements Question
 {
 
-    /**
-     * TASK: Implement a function void reverse(char* str) in C or C++ which reverses a null-terminated string.
-     * Clearly, this is a Java implementation, but I have tried to make it as close to a C implementation as possible.
-     * The C implementation (as yet untested) is given as a comment below.
-     * @param args  an array of strings to reverse
-     *              The reversed strings will be printed to the console.
-     */
-    public static void main(String[] args)
+    private String[] args;
+
+    public Question1_2(String[] args)
+    {
+        this.args = args;
+    }
+
+    @Override
+    public void solve()
     {
         for (String string : args) {
             reverse(string.toCharArray());
@@ -31,6 +39,11 @@ public class Question1_2
     private static void println(String message)
     {
         System.out.println(message);
+    }
+
+    public static void main(String[] args)
+    {
+        new Question1_2(args).solve();
     }
 
     /*

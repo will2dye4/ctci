@@ -22,7 +22,7 @@ public class Question1_2_Test
     @Test
     public void invokeMain_PrintsReversedStrings()
     {
-        Question1_2.main(args);
+        new Question1_2(args).solve();
         assertConsoleLinesEqualReversedArgs();
     }
 
