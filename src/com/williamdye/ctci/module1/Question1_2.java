@@ -41,7 +41,7 @@ public class Question1_2
     {
         int length = strlen(str);
         int i, j;
-        for (i = 0, j = length - 1; i < length; i++, j--) {
+        for (i = 0, j = length - 1; i < j; i++, j--) {
             swap(str, i, j);
         }
         printf("%s\n", str);

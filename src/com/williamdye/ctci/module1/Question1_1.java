@@ -40,7 +40,6 @@ public class Question1_1
      * This solution uses one additional data structure, but the benefit of the extra space
      * is a time complexity of just O(n).
      */
-    @SuppressWarnings("unused")
     private static boolean _hasAllUniqueCharacters(String string)
     {
         Set<Character> characters = new LinkedHashSet<Character>(string.length());
