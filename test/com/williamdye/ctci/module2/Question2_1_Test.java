@@ -16,7 +16,7 @@ public class Question2_1_Test
     public void solve_RemovesDuplicateNodes()
     {
         LinkedList<Integer> list = setUpLinkedList();
-        new Question2_1(list).solve();
+        new Question2_1<Integer>(list).solve();
 
         node = list.getHead();
         assertNodeDataEqualsAndAdvanceNode(1);

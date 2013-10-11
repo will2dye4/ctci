@@ -1,6 +1,5 @@
 package com.williamdye.ctci.module2;
 
-import com.williamdye.ctci.Question;
 import com.williamdye.ctci.util.LinkedList;
 import com.williamdye.ctci.util.LinkedListNode;
 
@@ -14,29 +13,28 @@ import java.util.Set;
  * FOLLOW UP:
  * How would you solve this problem if a temporary buffer is not allowed?
  */
-public class Question2_1 implements Question
+public class Question2_1<T> extends AbstractLinkedListQuestion<T>
 {
 
-    private LinkedList<Integer> list;
-    private Set<Integer> buffer;
+    private Set<T> buffer;
 
-    public Question2_1(LinkedList<Integer> list)
+    public Question2_1(LinkedList<T> list)
     {
-        this.list = list;
-        this.buffer = new LinkedHashSet<Integer>();
+        super(list);
+        this.buffer = new LinkedHashSet<T>();
     }
 
     @Override
     public void solve()
     {
-        LinkedListNode<Integer> node = list.getHead();
+        LinkedListNode<T> node = list.getHead();
         while (node != null) {
             checkForDuplicate(node);
             node = node.getNext();
         }
     }
 
-    private void checkForDuplicate(LinkedListNode<Integer> node)
+    private void checkForDuplicate(LinkedListNode<T> node)
     {
         if (buffer.contains(node.getData()))
             list.removeNode(node);
