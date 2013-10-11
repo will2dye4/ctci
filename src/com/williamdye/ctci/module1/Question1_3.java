@@ -6,7 +6,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * TASK: Given two strings, write a method to decide if one is a permutation of the other.
+ * TASK:
+ * Given two strings, write a method to decide if one is a permutation of the other.
  */
 public class Question1_3 extends AbstractQuestion
 {

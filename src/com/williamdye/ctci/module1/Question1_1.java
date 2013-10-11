@@ -5,7 +5,8 @@ import com.williamdye.ctci.AbstractQuestion;
 import java.util.*;
 
 /**
- * TASK: Implement an algorithm to determine if a string has all unique characters.
+ * TASK:
+ * Implement an algorithm to determine if a string has all unique characters.
  * What if you cannot use additional data structures?
  */
 public class Question1_1 extends AbstractQuestion

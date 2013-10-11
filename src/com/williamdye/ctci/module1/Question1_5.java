@@ -3,10 +3,14 @@ package com.williamdye.ctci.module1;
 import com.williamdye.ctci.AbstractQuestion;
 
 /**
- * TASK: Implement a method to perform basic string compression using the counts
- * of repeated characters. For example, the string "aabcccccaaa" would become
- * "a2b1c5a3". If the "compressed" string would not become smaller than the original
- * string, your method should return the original string.
+ * TASK:
+ * Implement a method to perform basic string compression using the counts
+ * of repeated characters. If the "compressed" string would not become smaller
+ * than the original string, your method should return the original string.
+ *
+ * EXAMPLES:
+ * "aabcccccaaa" => "a2b1c5a3"
+ * "abcdefgh" => "abcdefgh"
  */
 public class Question1_5 extends AbstractQuestion
 {
