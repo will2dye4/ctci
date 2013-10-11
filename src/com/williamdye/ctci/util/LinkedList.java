@@ -23,4 +23,16 @@ public class LinkedList<T>
         node.setNext(new LinkedListNode<T>(data));
     }
 
+    public void removeNode(LinkedListNode<T> node)
+    {
+        LinkedListNode<T> current = this.head;
+        LinkedListNode<T> previous = current;
+        while (!(current.equals(node)) && (current.getNext() != null)) {
+            previous = current;
+            current = current.getNext();
+        }
+        if (current.equals(node))
+            previous.setNext(current.getNext());
+    }
+
 }
