@@ -1,29 +1,23 @@
 package com.williamdye.ctci.module1;
 
-import com.williamdye.ctci.Question;
-
 /**
  * TASK:
  * Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes,
  * write a method to rotate the image by 90 degrees. Can you do this in place?
  */
-public class Question1_6 implements Question
+public class Question1_6 extends AbstractMatrixQuestion
 {
-
-    private int[][] picture;
-    private int n;
 
     public Question1_6(int[][] picture)
     {
-        this.picture = picture;
-        this.n = picture.length;
+        super(picture);
         if (pictureSizeIsInvalid())
             throw new IllegalArgumentException("The picture (matrix) must be NxN, N > 0");
     }
 
     private boolean pictureSizeIsInvalid()
     {
-        return (picture.length == 0) || (picture.length != picture[0].length);
+        return (matrix.length == 0) || (matrix.length != matrix[0].length);
     }
 
     @Override
@@ -50,9 +44,9 @@ public class Question1_6 implements Question
     {
         for (int col = 0; col < n; col++) {
             /* XOR swap */
-            picture[toRow][col] = picture[fromRow][col] ^ picture[toRow][col];
-            picture[fromRow][col] = picture[fromRow][col] ^ picture[toRow][col];
-            picture[toRow][col] = picture[fromRow][col] ^ picture[toRow][col];
+            matrix[toRow][col] = matrix[fromRow][col] ^ matrix[toRow][col];
+            matrix[fromRow][col] = matrix[fromRow][col] ^ matrix[toRow][col];
+            matrix[toRow][col] = matrix[fromRow][col] ^ matrix[toRow][col];
         }
     }
 
@@ -68,20 +62,9 @@ public class Question1_6 implements Question
 
     private void swapEntries(int i, int j)
     {
-        picture[j][i] = picture[i][j] ^ picture[j][i];
-        picture[i][j] = picture[i][j] ^ picture[j][i];
-        picture[j][i] = picture[i][j] ^ picture[j][i];
-    }
-
-    private void printMatrix()
-    {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print(picture[i][j] + "\t");
-            }
-            System.out.print("\n");
-        }
-        System.out.println();
+        matrix[j][i] = matrix[i][j] ^ matrix[j][i];
+        matrix[i][j] = matrix[i][j] ^ matrix[j][i];
+        matrix[j][i] = matrix[i][j] ^ matrix[j][i];
     }
 
     public static void main(String[] args)

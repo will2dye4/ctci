@@ -1,7 +1,5 @@
 package com.williamdye.ctci.module1;
 
-import com.williamdye.ctci.AbstractQuestion;
-
 /**
  * TASK:
  * Write a method to replace all spaces in a string with '%20'. You may assume that
@@ -13,7 +11,7 @@ import com.williamdye.ctci.AbstractQuestion;
  * Input:   "Mr John Smith    "
  * Output:  "Mr%20John%20Smith"
  */
-public class Question1_4 extends AbstractQuestion
+public class Question1_4 extends AbstractStringQuestion
 {
 
     private static final char SPACE = ' ';

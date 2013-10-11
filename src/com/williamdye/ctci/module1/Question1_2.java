@@ -1,7 +1,5 @@
 package com.williamdye.ctci.module1;
 
-import com.williamdye.ctci.AbstractQuestion;
-
 /**
  * TASK:
  * Implement a function void reverse(char* str) in C or C++ which reverses a null-terminated string.
@@ -9,7 +7,7 @@ import com.williamdye.ctci.AbstractQuestion;
  * Clearly, this is a Java implementation, but I have tried to make it as close to a C implementation as possible.
  * The C implementation (as yet untested) is given as a comment below.
  */
-public class Question1_2 extends AbstractQuestion
+public class Question1_2 extends AbstractStringQuestion
 {
 
     public Question1_2(String[] args)

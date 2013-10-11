@@ -1,7 +1,5 @@
 package com.williamdye.ctci.module1;
 
-import com.williamdye.ctci.AbstractQuestion;
-
 import java.util.*;
 
 /**
@@ -9,7 +7,7 @@ import java.util.*;
  * Implement an algorithm to determine if a string has all unique characters.
  * What if you cannot use additional data structures?
  */
-public class Question1_1 extends AbstractQuestion
+public class Question1_1 extends AbstractStringQuestion
 {
 
     private boolean optimizeForSpace;

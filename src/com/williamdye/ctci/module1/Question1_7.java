@@ -1,7 +1,5 @@
 package com.williamdye.ctci.module1;
 
-import com.williamdye.ctci.Question;
-
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -10,37 +8,25 @@ import java.util.Set;
  * Implement an algorithm such that if an element in an MxN matrix is 0,
  * its entire row and column is set to 0.
  */
-public class Question1_7 implements Question
+public class Question1_7 extends AbstractMatrixQuestion
 {
 
-    private int[][] matrix;
-    private int m;
-    private int n;
     private Set<Integer> clearedRows;
     private Set<Integer> clearedColumns;
 
     public Question1_7(int[][] matrix)
     {
-        this.matrix = matrix;
-        this.m = this.n = 0;
+        super(matrix);
         this.clearedRows = new LinkedHashSet<>();
         this.clearedColumns = new LinkedHashSet<>();
     }
 
     public void solve()
     {
-        computeMAndN();
         if (matrixIsNotEmpty()) {
             findZerosAndClearEntries();
             printMatrix();
         }
-    }
-
-    private void computeMAndN()
-    {
-        this.n = matrix.length;
-        if (matrix.length > 0)
-            this.m = matrix[0].length;
     }
 
     private boolean matrixIsNotEmpty()
@@ -83,17 +69,6 @@ public class Question1_7 implements Question
             matrix[j][column] = 0;
         clearedRows.add(row);
         clearedColumns.add(column);
-    }
-
-    private void printMatrix()
-    {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                System.out.print(matrix[i][j] + "\t");
-            }
-            System.out.print("\n");
-        }
-        System.out.println();
     }
 
     public static void main(String[] args)
