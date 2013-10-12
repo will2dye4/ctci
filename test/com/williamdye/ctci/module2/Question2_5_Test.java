@@ -7,6 +7,7 @@ import com.williamdye.ctci.util.LinkedListNode;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class Question2_5_Test
 {
@@ -28,6 +29,7 @@ public class Question2_5_Test
         assertNodeDataEqualsAndAdvanceNode(2);
         assertNodeDataEqualsAndAdvanceNode(1);
         assertNodeDataEqualsAndAdvanceNode(9);
+        assertNull(node);
     }
 
     private LinkedList<Digit> setUpLinkedList(Integer... digits)
