@@ -54,6 +54,12 @@ public class Question2_2_Test
         solveWithValueOfK(-1);
     }
 
+    @Test(expected=IllegalArgumentException.class)
+    public void solveWithTooLargeK_ThrowsException()
+    {
+        solveWithValueOfK(10);
+    }
+
     private void solveWithValueOfK(int k)
     {
         question = new Question2_2<Integer>(list, k);

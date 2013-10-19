@@ -4,15 +4,22 @@ public class LinkedList<T>
 {
 
     private LinkedListNode<T> head;
+    private int size;
 
     public LinkedList(T data)
     {
         this.head = new LinkedListNode<T>(data);
+        this.size = 1;
     }
 
     public LinkedListNode<T> getHead()
     {
         return this.head;
+    }
+
+    public int getSize()
+    {
+        return this.size;
     }
 
     public void appendToTail(T data)
@@ -21,6 +28,7 @@ public class LinkedList<T>
         while (node.getNext() != null)
             node = node.getNext();
         node.setNext(new LinkedListNode<T>(data));
+        size += 1;
     }
 
     public void removeNode(LinkedListNode<T> node)
@@ -33,6 +41,7 @@ public class LinkedList<T>
         }
         if (current.equals(node))
             previous.setNext(current.getNext());
+        size -= 1;
     }
 
 }

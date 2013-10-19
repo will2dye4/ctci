@@ -12,7 +12,6 @@ import java.util.Stack;
 public class Question2_7<T> extends AbstractLinkedListQuestion<T>
 {
 
-    private int numberOfNodes;
     private boolean palindrome;
     private LinkedListNode<T> current;
     private Stack<T> stack;
@@ -20,7 +19,6 @@ public class Question2_7<T> extends AbstractLinkedListQuestion<T>
     public Question2_7(LinkedList<T> list)
     {
         super(list);
-        this.numberOfNodes = 0;
         this.palindrome = false;
         this.current = list.getHead();
         this.stack = new Stack<T>();
@@ -29,22 +27,13 @@ public class Question2_7<T> extends AbstractLinkedListQuestion<T>
     @Override
     public void solve()
     {
-        getNodeCount();
         pushFirstHalfOntoStack();
         checkForPalindrome();
     }
 
-    private void getNodeCount()
-    {
-        while (current != null) {
-            numberOfNodes += 1;
-            current = current.getNext();
-        }
-    }
-
     private void pushFirstHalfOntoStack()
     {
-        int nodesToPush = numberOfNodes / 2;
+        int nodesToPush = list.getSize() / 2;
         current = list.getHead();
         while (nodesToPush > 0) {
             stack.push(current.getData());
@@ -55,7 +44,7 @@ public class Question2_7<T> extends AbstractLinkedListQuestion<T>
 
     private void checkForPalindrome()
     {
-        if ((numberOfNodes % 2) == 1)
+        if ((list.getSize() % 2) == 1)
             current = current.getNext();
         while (!stack.isEmpty()) {
             if (!stack.pop().equals(current.getData()))
