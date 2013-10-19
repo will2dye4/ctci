@@ -17,6 +17,11 @@ public class LinkedList<T>
         return this.head;
     }
 
+    public void setHead(LinkedListNode<T> head)
+    {
+        this.head = head;
+    }
+
     public int getSize()
     {
         return this.size;
