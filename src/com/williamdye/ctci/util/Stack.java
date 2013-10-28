@@ -3,8 +3,8 @@ package com.williamdye.ctci.util;
 public class Stack<T>
 {
 
-    private LinkedListNode<T> top;
-    private int size;
+    protected LinkedListNode<T> top;
+    protected int size;
 
     public Stack()
     {
