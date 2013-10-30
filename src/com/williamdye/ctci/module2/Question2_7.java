@@ -2,8 +2,7 @@ package com.williamdye.ctci.module2;
 
 import com.williamdye.ctci.util.LinkedList;
 import com.williamdye.ctci.util.LinkedListNode;
-
-import java.util.Stack;
+import com.williamdye.ctci.util.Stack;
 
 /**
  * TASK:
