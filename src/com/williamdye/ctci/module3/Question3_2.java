@@ -28,7 +28,7 @@ public class Question3_2<T extends Comparable<T>> extends Stack<T>
 
     private boolean dataIsLessThanCurrentMin(T data)
     {
-        return (minStack.getSize() == 0) || (data.compareTo(minStack.peek()) < 0);
+        return (minStack.isEmpty()) || (data.compareTo(minStack.peek()) < 0);
     }
 
     @Override

@@ -48,4 +48,9 @@ public class Queue<T>
         return this.size;
     }
 
+    public boolean isEmpty()
+    {
+        return (this.size == 0);
+    }
+
 }
